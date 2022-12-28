@@ -7,4 +7,4 @@ Some references where I took inspiration/stole some base scripts:
 
 Most stuff has been heavily modified however
 
-[](shot.png)
+![screesnhot](./shot.png)
