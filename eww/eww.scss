@@ -1,0 +1,56 @@
+$bg: rgba(#ffffff,0.1);
+$fg: #dddddd;
+$shadow: rgba(#000000,0.3);
+$border_col: rgba(#cccccc,0.18);
+
+.bar-0, .bar-1 {
+	background-color: transparent;	
+}
+
+.main-container {
+	margin: 8px 12px 0px 12px;
+}
+
+.container {
+    margin: 0.1em;
+	background-color: $bg;
+	border-radius: 10px;
+	color: $fg;	
+	border: 1px solid $border_col;
+	box-shadow: 2px 2px 2px $shadow;
+	font-size: 1em;
+	font-family: 'Noto Sans', 'Font Awesome 6 Free Solid';
+	padding: 0.5em;
+	border: 0.1em solid $border_col;
+	box-shadow: 2px 2px 2px $shadow;
+	text-shadow: none;
+}
+
+.workspaces {
+	margin-left: 0.2em;
+	margin-right: 0.2em;
+	// hmpf. blobs are not rendered on baseline. force vertical alignment
+	margin-top: 0.2em;
+    font-family: 'Overpass Mono';
+    font-size: 2.5em;
+    letter-spacing: 0.2em;
+}
+
+.side_widget {
+    background-color: $bg;
+    border-radius: 1em;
+    border: 1px solid $border_col;
+	margin: 0em 0.5em;
+}
+
+.pill_type {
+	background-color: rgba(#ffff00,0.1);;
+	border-top-left-radius: 1em;
+	border-bottom-left-radius: 1em;
+	border-right: 1px solid $border_col;
+	padding: 0.8em;
+}
+
+.pill_content {
+	padding: 5px;
+}

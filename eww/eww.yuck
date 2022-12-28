@@ -1,0 +1,142 @@
+(defpoll time :interval "20s"
+`LC_TIME=de_DE.UTF-8 date +" %a %b %d %H:%M"`)
+
+(defpoll battery :interval "30s"
+`/home/$USER/.config/eww/Scripts/battery.py`)
+
+(deflisten volume
+`/home/$USER/.config/eww/Scripts/volume.py`)
+
+(defpoll network :interval "5s"
+`/home/$USER/.config/eww/Scripts/network.py`)
+
+(deflisten g14
+`/home/$USER/.config/eww/Scripts/g14.py`)
+
+(defpoll cpu_temp :interval "4s"
+`/home/$USER/.config/eww/Scripts/cpu_temp.py`)
+
+(defpoll gpu_temp :interval "4s"
+`/home/$USER/.config/eww/Scripts/gpu_temp.py`)
+
+(deflisten workspaces_0
+`/home/$USER/.config/eww/Scripts/workspaces.py 0`)
+
+(deflisten workspaces_1
+`/home/$USER/.config/eww/Scripts/workspaces.py 1`)
+
+(deflisten window_title_0
+`/home/$USER/.config/eww/Scripts/window_title.py 0`)
+
+(deflisten window_title_1
+`/home/$USER/.config/eww/Scripts/window_title.py 1`)
+
+(defwindow bar-0
+  :monitor 0
+  :windowtype "dock"
+  :geometry (geometry
+    :width "100%"
+    :height "4%"
+    :anchor "top center"
+  )
+  :exclusive true
+  
+  (centerbox :class "main-container"
+    
+    (box :class "container" :halign "start"
+      (box :class "workspaces"
+        (literal :content "${workspaces_0}")
+      )
+    )
+    
+    (box :class "container" :halign "center"
+      "${window_title_0}"
+    )
+    
+    (box :class "container" :halign "end" :space-evenly "false"
+      (box :class "side_widget" :space-evenly "false"
+        (box :class "pill_type" "")
+        (box :class "pill_content" "${g14}")
+      )
+      (box :class "side_widget" :space-evenly "false"
+        (box :class "pill_type" "")
+        (box :class "pill_content" "${volume}")
+      )
+      (box :class "side_widget" :space-evenly "false"
+        (box :class "pill_type" "")
+        (box :class "pill_content" "${network}")
+      )
+      (box :class "side_widget" :space-evenly "false"
+        (box :class "pill_type" "")
+        (box :class "pill_content" "${cpu_temp}")
+      )
+      (box :class "side_widget" :space-evenly "false"
+        (box :class "pill_type" "")
+        (box :class "pill_content" "${gpu_temp}")
+      )
+      (box :class "side_widget" :space-evenly "false"
+        (box :class "pill_type" "")
+        (box :class "pill_content" "${battery}")
+      )
+      (box :class "side_widget" :space-evenly "false"
+        (box :class "pill_type" "")
+        (box :class "pill_content" "${time}")
+      )
+    )
+  )
+)
+
+(defwindow bar-1
+  :monitor 1
+  :windowtype "dock"
+  :geometry (geometry
+    :width "100%"
+    :height "4%"
+    :anchor "top center"
+  )
+  :exclusive true
+  
+  (centerbox :class "main-container"
+    
+    (box :class "container" :halign "start"
+      (box :class "workspaces"
+        (literal :content "${workspaces_1}")
+      )
+    )
+    
+    (box :class "container" :halign "center"
+      "${window_title_1}"
+    )
+    
+    (box :class "container" :halign "end" :space-evenly "false"
+      (box :class "side_widget" :space-evenly "false"
+        (box :class "pill_type" "")
+        (box :class "pill_content" "${g14}")
+      )
+      (box :class "side_widget" :space-evenly "false"
+        (box :class "pill_type" "")
+        (box :class "pill_content" "${volume}")
+      )
+      (box :class "side_widget" :space-evenly "false"
+        (box :class "pill_type" "")
+        (box :class "pill_content" "${network}")
+      )
+      (box :class "side_widget" :space-evenly "false"
+        (box :class "pill_type" "")
+        (box :class "pill_content" "${cpu_temp}")
+      )
+      (box :class "side_widget" :space-evenly "false"
+        (box :class "pill_type" "")
+        (box :class "pill_content" "${gpu_temp}")
+      )
+      (box :class "side_widget" :space-evenly "false"
+        (box :class "pill_type" "")
+        (box :class "pill_content" "${battery}")
+      )
+      (box :class "side_widget" :space-evenly "false"
+        (box :class "pill_type" "")
+        (box :class "pill_content" "${time}")
+      )
+    )
+  )
+)
