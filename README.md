@@ -6,3 +6,5 @@ Some references where I took inspiration/stole some base scripts:
 - https://github.com/nawfalmrouyan/hyprland
 
 Most stuff has been heavily modified however
+
+[](shot.png)
